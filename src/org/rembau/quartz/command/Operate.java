@@ -14,7 +14,7 @@ public class Operate extends IOperate{
 		return operate==null?operate = new Operate():operate;
 	}
 	public void selectOpreate(String command){
-		if(command.startsWith(Context.CMS_EXCUTE)){
+		if(command.startsWith(Context.CMD_EXCUTE)){
 			HashMap<String,String> params = new HashMap<String,String>();
 			params = ExcuteCommandTool.analyse(command);
 			String job_classname = params.get(ContextExcute.E_JOB_CLASSNAME);

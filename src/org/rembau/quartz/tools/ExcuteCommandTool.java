@@ -7,7 +7,7 @@ import org.rembau.quartz.ContextExcute;
 
 public class ExcuteCommandTool {
 	public static HashMap<String,String> analyse(String command){
-		command=command.replaceAll(Context.CMS_EXCUTE, "");
+		command=command.replaceAll(Context.CMD_EXCUTE, "");
 		//System.out.println(command);
 		command=command.trim();
 		HashMap<String,String> infoNames = new HashMap<String,String>();

@@ -64,7 +64,7 @@ public class CommandClient extends Thread{
 				boolean flag = true;
 				cmd=cmd.trim();
 				if(!cmd.equals("")){
-					if(cmd.startsWith(Context.CMS_EXCUTE)){
+					if(cmd.startsWith(Context.CMD_EXCUTE)){
 						HashMap<String,String> parameter = ExcuteCommandTool.analyse(cmd);
 						String job_classname = parameter.get(ContextExcute.E_JOB_CLASSNAME);
 						//System.out.println("job_classname "+job_classname);
