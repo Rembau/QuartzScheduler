@@ -61,20 +61,22 @@ public class CommandClient extends Thread{
 			readFromSystem = new BufferedReader(new InputStreamReader(System.in));
 			String cmd=readFromSystem.readLine();
 			while(!cmd.equals("exit")){
-				//cmd=cmd.trim().toLowerCase();
+				boolean flag = true;
+				cmd=cmd.trim();
 				if(!cmd.equals("")){
 					if(cmd.startsWith(Context.CMS_EXCUTE)){
 						HashMap<String,String> parameter = ExcuteCommandTool.analyse(cmd);
 						String job_classname = parameter.get(ContextExcute.E_JOB_CLASSNAME);
-						System.out.println("job_classname "+job_classname);
+						//System.out.println("job_classname "+job_classname);
 						AdapterJobBean job = (AdapterJobBean) CompileTool.compile(job_classname);
 						if(job==null){
 							System.out.println(job_classname+" is not found!");
+							flag =false;
 						} else {
-							System.out.println(job.test());
+							//System.out.println(job.test());
 						}
 					}
-					writeToSocket.writeBytes(cmd+"\n");
+					if(flag) writeToSocket.writeBytes(cmd+"\n");
 				}
 				cmd =readFromSystem.readLine();
 			}

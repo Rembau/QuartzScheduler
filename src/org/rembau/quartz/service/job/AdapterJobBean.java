@@ -11,6 +11,6 @@ public abstract class AdapterJobBean extends QuartzJobBean {
 	public String e_group_name;
 	public String e_name;
 	public String e_group;
-	public abstract String test();
+	public abstract void test();
 	protected abstract void executeInternal(JobExecutionContext arg0);
 }
