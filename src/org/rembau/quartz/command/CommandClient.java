@@ -61,22 +61,31 @@ public class CommandClient extends Thread{
 			readFromSystem = new BufferedReader(new InputStreamReader(System.in));
 			String cmd=readFromSystem.readLine();
 			while(!cmd.equals("exit")){
-				boolean flag = true;
 				cmd=cmd.trim();
 				if(!cmd.equals("")){
-					if(cmd.startsWith(Context.CMD_EXCUTE)){
-						HashMap<String,String> parameter = ExcuteCommandTool.analyse(Context.CMD_EXCUTE,cmd);
-						String job_classname = parameter.get(ContextExcute.E_JOB_CLASSNAME);
-						//System.out.println("job_classname "+job_classname);
-						AdapterJobBean job = (AdapterJobBean) CompileTool.compile(job_classname);
-						if(job==null){
-							System.out.println(job_classname+" is not found!");
-							flag =false;
-						} else {
-							//System.out.println(job.test());
+					label:{
+						if(cmd.startsWith(Context.CMD_EXCUTE)){
+							HashMap<String,String> parameter = ExcuteCommandTool.analyse(Context.CMD_EXCUTE,cmd);
+							String job_classname = parameter.get(ContextExcute.E_JOB_CLASSNAME);
+							//System.out.println("job_classname "+job_classname);
+							if(job_classname == null || job_classname.trim().length()==0){
+								System.out.println("请填写类名！");
+								break label;
+							}
+							if(job_classname.charAt(0)<'A' || job_classname.charAt(0)>'Z'){
+								System.out.println("类名首字母必须为大写字母。");
+								break label;
+							}
+							AdapterJobBean job = (AdapterJobBean) CompileTool.compile(job_classname);
+							if(job==null){
+								System.out.println(job_classname+" is not found!");
+								break label;
+							} else {
+								//System.out.println(job.test());
+							}
 						}
+						writeToSocket.writeBytes(cmd+"\n");
 					}
-					if(flag) writeToSocket.writeBytes(cmd+"\n");
 				}
 				cmd =readFromSystem.readLine();
 			}
