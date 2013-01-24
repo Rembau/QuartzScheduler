@@ -16,7 +16,7 @@ public class Operate extends IOperate{
 	public void selectOpreate(String command){
 		if(command.startsWith(Context.CMD_EXCUTE)){
 			HashMap<String,String> params = new HashMap<String,String>();
-			params = ExcuteCommandTool.analyse(command);
+			params = ExcuteCommandTool.analyse(Context.CMD_EXCUTE,command);
 			String job_classname = params.get(ContextExcute.E_JOB_CLASSNAME);
 			System.out.println("job_classname "+job_classname);
 			AdapterJobBean job = (AdapterJobBean) CompileTool.compile(job_classname);

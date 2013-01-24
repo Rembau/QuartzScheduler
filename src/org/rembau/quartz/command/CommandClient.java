@@ -65,7 +65,7 @@ public class CommandClient extends Thread{
 				cmd=cmd.trim();
 				if(!cmd.equals("")){
 					if(cmd.startsWith(Context.CMD_EXCUTE)){
-						HashMap<String,String> parameter = ExcuteCommandTool.analyse(cmd);
+						HashMap<String,String> parameter = ExcuteCommandTool.analyse(Context.CMD_EXCUTE,cmd);
 						String job_classname = parameter.get(ContextExcute.E_JOB_CLASSNAME);
 						//System.out.println("job_classname "+job_classname);
 						AdapterJobBean job = (AdapterJobBean) CompileTool.compile(job_classname);

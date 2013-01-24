@@ -6,8 +6,8 @@ import org.rembau.quartz.Context;
 import org.rembau.quartz.ContextExcute;
 
 public class ExcuteCommandTool {
-	public static HashMap<String,String> analyse(String command){
-		command=command.replaceAll(Context.CMD_EXCUTE, "");
+	public static HashMap<String,String> analyse(String cmd,String command){
+		command=command.replaceAll(cmd, "");
 		//System.out.println(command);
 		command=command.trim();
 		HashMap<String,String> infoNames = new HashMap<String,String>();
@@ -51,6 +51,6 @@ public class ExcuteCommandTool {
 		return infoNames;
 	}
 	public static void main(String[] args) {
-		System.out.println(analyse("excute -c c -n -gn  -et et et -st st -jcn jcn -g g -jn jn"));
+		System.out.println(analyse(Context.CMD_EXCUTE,"excute -c c -n -gn  -et et et -st st -jcn jcn -g g -jn jn"));
 	}
 }

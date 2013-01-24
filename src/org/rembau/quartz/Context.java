@@ -14,6 +14,11 @@ public class Context {
 	public static String CMD_STOP="stop";
 	public static String CMD_EXIT="exit";
 	public static String CMD_EXCUTE="excute";
+	public static String CMD_DELETE_JOB="delete -job";
+	public static String CMD_DELETE_TRIGGER="delete -trigger";
+	public static String CMD_PAUSE_ALL="pausea";
+	public static String CMD_PAUSE_JOB="pausej";
+	public static String CMD_PAUSE_TRIGGER="pauset";
 	/**
 	 * 额外的编译文件路径
 	 */
