@@ -10,6 +10,8 @@ import java.util.HashMap;
 
 import org.rembau.quartz.Context;
 import org.rembau.quartz.ContextExcute;
+import org.rembau.quartz.service.job.AdapterJobBean;
+import org.rembau.quartz.tools.CompileTool;
 import org.rembau.quartz.tools.ExcuteCommandTool;
 
 public class CommandClient extends Thread{
@@ -59,13 +61,18 @@ public class CommandClient extends Thread{
 			readFromSystem = new BufferedReader(new InputStreamReader(System.in));
 			String cmd=readFromSystem.readLine();
 			while(!cmd.equals("exit")){
-				cmd=cmd.trim().toLowerCase();
+				//cmd=cmd.trim().toLowerCase();
 				if(!cmd.equals("")){
-					if(cmd.startsWith(Context.CMS_EXCUTE))
-					{
+					if(cmd.startsWith(Context.CMS_EXCUTE)){
 						HashMap<String,String> parameter = ExcuteCommandTool.analyse(cmd);
 						String job_classname = parameter.get(ContextExcute.E_JOB_CLASSNAME);
 						System.out.println("job_classname "+job_classname);
+						AdapterJobBean job = (AdapterJobBean) CompileTool.compile(job_classname);
+						if(job==null){
+							System.out.println(job_classname+" is not found!");
+						} else {
+							System.out.println(job.test());
+						}
 					}
 					writeToSocket.writeBytes(cmd+"\n");
 				}

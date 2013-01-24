@@ -1,6 +1,7 @@
 package org.rembau.quartz;
 
 import org.rembau.quartz.command.CommandClient;
+import org.rembau.quartz.command.CommandServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -12,12 +13,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainClass {
 	private static final Logger logger = LoggerFactory.getLogger(MainClass.class);
 	public static void main(String[] args) {
-		if(args[0].trim().equals("start")){
-			logger.info("程序启动");
-			 new ClassPathXmlApplicationContext(
+		new ClassPathXmlApplicationContext(
 					new String[]{"classpath:applicationContext.xml","classpath:applicationContext-quartz.xml"});
-		} else if(args.length==0){
+		Context.init(); 	//全局上下文 初始化。
+		if(args.length==0){
 			new CommandClient().start();
+		} else if(args[0].trim().equals("start")){
+			logger.info("程序启动");
+			new CommandServer().start();
 		} else {
 			new CommandClient(args[0]).start();
 		}

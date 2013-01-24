@@ -44,13 +44,13 @@ public class ExcuteCommandTool {
 				infoNames.put(parameter, infos[i].trim());
 				flag=false;
 			} else {
-				//System.out.println(infos[i]+" 错误的。");
+				//System.out.println(infos[i]+" ");
 			}
 			i++;
 		}
 		return infoNames;
 	}
 	public static void main(String[] args) {
-		System.out.println(analyse("excute -c c -n -gn  -et et -st st -jcn jcn -g g -jn jn"));
+		System.out.println(analyse("excute -c c -n -gn  -et et et -st st -jcn jcn -g g -jn jn"));
 	}
 }

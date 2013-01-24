@@ -1,5 +1,7 @@
 package org.rembau.quartz.command;
 
+import java.util.HashMap;
+
 import org.rembau.quartz.Context;
 
 public class Operate extends IOperate{
@@ -9,7 +11,7 @@ public class Operate extends IOperate{
 	}
 	public void selectOpreate(String command){
 		if(command.startsWith(Context.CMS_EXCUTE)){
-			
+			HashMap<String,String> paramsMap = new HashMap<String,String>();
 		}
 	}
 	public static void main(String[] args) {
