@@ -11,8 +11,8 @@ import java.util.HashMap;
 import org.rembau.quartz.Context;
 import org.rembau.quartz.ContextExcute;
 import org.rembau.quartz.service.job.AdapterJobBean;
-import org.rembau.quartz.tools.CompileTool;
-import org.rembau.quartz.tools.ExcuteCommandTool;
+import org.rembau.tools.CompileTool;
+import org.rembau.tools.ExcuteCommandTool;
 
 public class CommandClient extends Thread{
 	private String cmd="";

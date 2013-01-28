@@ -1,4 +1,4 @@
-package org.rembau.quartz.tools;
+package org.rembau.tools;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

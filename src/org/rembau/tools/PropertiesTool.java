@@ -1,4 +1,4 @@
-package org.rembau.quartz.tools;
+package org.rembau.tools;
 
 import java.io.FileInputStream;
 import java.io.IOException;

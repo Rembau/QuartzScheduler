@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import org.rembau.quartz.tools.PropertiesTool;
+import org.rembau.tools.PropertiesTool;
 
 public class Context {
 	public static int CMD_S_PORT=2000;
