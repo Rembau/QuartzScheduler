@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PackageAnalysis>
+    <Package name="compile" x="555" y="80">
+        <DependencyLink destination="org.rembau.quartz.service.job"/>
+    </Package>
+    <Package name="org.rembau.quartz.command" x="522" y="177">
+        <DependencyLink destination="org.rembau.tools"/>
+        <DependencyLink destination="org.rembau.quartz.service.job"/>
+    </Package>
+    <Package name="org.rembau.quartz.service" x="333" y="44"/>
+    <Package name="org.rembau" x="164" y="88"/>
+    <Package name="org.rembau.tools" x="336" y="284"/>
+    <Package name="org.rembau.quartz.service.job" x="288" y="125"/>
+</PackageAnalysis>
