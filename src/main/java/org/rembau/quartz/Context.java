@@ -1,11 +1,11 @@
 package org.rembau.quartz;
 
+import org.rembau.tools.PropertiesTool;
+
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-
-import org.rembau.tools.PropertiesTool;
 
 public class Context {
 	public static int CMD_S_PORT=2000;
@@ -22,9 +22,9 @@ public class Context {
 	/**
 	 * 额外的编译文件路径
 	 */
-	public static String JOB_COMPILTEPATH="src"+File.separator+"compile";
+	public static String JOB_COMPILTEPATH="src"+File.separator+ "org/rembau/compile";
 	public static void init(){
-		Properties params = PropertiesTool.getParams("conf"+File.separator+"extra.properties");
+		Properties params = PropertiesTool.getParams("conf"+File.separator+ "extra.properties");
 		JOB_COMPILTEPATH = params.getProperty("extraComilePath");
 	}
 }

@@ -21,7 +21,7 @@ public class CompileTool {
 			try {
 				Thread t= Thread.currentThread();
 				ClassLoader loader = t.getContextClassLoader();
-				Class<?> loadClass = loader.loadClass("compile."+className);
+				Class<?> loadClass = loader.loadClass("org.rembau.compile."+className);
 				Object o = loadClass.newInstance();
 				return o;
 			} catch (ClassNotFoundException e) {

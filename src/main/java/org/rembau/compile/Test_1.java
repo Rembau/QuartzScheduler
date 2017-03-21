@@ -1,9 +1,9 @@
-package compile;
+package org.rembau.compile;
 
 import org.quartz.JobExecutionContext;
 import org.rembau.quartz.service.job.AdapterJobBean;
 
-public class Test_2 extends AdapterJobBean{
+public class Test_1 extends AdapterJobBean{
 
 	public static void main(String[] args) {
 
@@ -11,7 +11,7 @@ public class Test_2 extends AdapterJobBean{
 
 	@Override
 	public void test() {
-		System.out.println("Who are you?");
+		System.out.println("I'm good too!");
 	}
 
 	@Override

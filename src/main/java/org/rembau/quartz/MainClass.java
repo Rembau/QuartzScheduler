@@ -16,6 +16,7 @@ public class MainClass {
 		new ClassPathXmlApplicationContext(
 					new String[]{"classpath:applicationContext.xml","classpath:applicationContext-quartz.xml"});
 		Context.init(); 	//全局上下文 初始化。
+        logger.info("start");
 		if(args.length==0){
 			new CommandClient().start();
 		} else if(args[0].trim().equals("start")){

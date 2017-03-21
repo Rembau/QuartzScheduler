@@ -1,5 +1,11 @@
 package org.rembau.quartz.command;
 
+import org.rembau.quartz.Context;
+import org.rembau.quartz.ContextExcute;
+import org.rembau.quartz.service.job.AdapterJobBean;
+import org.rembau.tools.CompileTool;
+import org.rembau.tools.ExcuteCommandTool;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -8,12 +14,6 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.HashMap;
 
-import org.rembau.quartz.Context;
-import org.rembau.quartz.ContextExcute;
-import org.rembau.quartz.service.job.AdapterJobBean;
-import org.rembau.tools.CompileTool;
-import org.rembau.tools.ExcuteCommandTool;
-
 public class CommandClient extends Thread{
 	private String cmd="";
 	public CommandClient(){}
@@ -21,11 +21,11 @@ public class CommandClient extends Thread{
 		this.cmd=str;
 	}
 	public void run(){
-		if(cmd.length()==0){
-			loop();
-		} else if(cmd.equals(Context.CMD_STOP)){
-			sendMessage();
-		}
+//		if(cmd.length()==0){
+//			loop();
+//		} else if(cmd.equals(Context.CMD_STOP)){
+//			sendMessage();
+//		}
 	}
 	public void sendMessage(){
 		Socket socket=null;

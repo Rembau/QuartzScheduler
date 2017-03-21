@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PackageAnalysis>
-    <Package name="compile" x="555" y="80">
+    <Package name="org.rembau.compile" x="555" y="80">
         <DependencyLink destination="org.rembau.quartz.service.job"/>
     </Package>
     <Package name="org.rembau.quartz.command" x="522" y="177">
