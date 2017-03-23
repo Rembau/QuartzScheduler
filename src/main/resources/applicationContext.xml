@@ -25,5 +25,6 @@
 	</bean>
 
     <import resource="datasource.xml"/>
+    <import resource="applicationContext-quartz.xml"/>
 
 </beans>

@@ -14,7 +14,7 @@ public class MainClass {
 	private static final Logger logger = LoggerFactory.getLogger(MainClass.class);
 	public static void main(String[] args) {
 		new ClassPathXmlApplicationContext(
-					new String[]{"classpath:applicationContext.xml","classpath:applicationContext-quartz.xml"});
+					new String[]{"classpath:applicationContext.xml"});
 		Context.init(); 	//全局上下文 初始化。
         logger.info("start");
 		if(args.length==0){
